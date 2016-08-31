@@ -7,7 +7,7 @@ var packageConfig = require('../package.json');
 var cartridgeUtil = require('cartridge-module-util')(packageConfig);
 var path          = require('path');
 
-var TASK_NAME = 'base';
+var TASK_NAME = 'local-server';
 
 function projectConfigDeletePaths(config) {
 	delete config.paths.src[TASK_NAME]

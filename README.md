@@ -1,79 +1,32 @@
-# Base Module [![Build Status][travis-image]][travis-url]
+# Cartridge local server [![Build Status](https://travis-ci.org/cartridge/cartridge-local-server.svg?branch=master)](https://travis-ci.org/cartridge/cartridge-local-server)
 
-> Starting point for a base [Cartridge](https://github.com/cartridge/cartridge) module
+> local-server expansion pack for [Cartridge](https://github.com/cartridge/cartridge)
 
-## Setup for a new module
-[Create a new empty repository](https://github.com/new) for your expansion pack.
-
-Clone this repository, giving the name of the new module - prefixed with the word `cartridge-`. This will be the name of the folder the source is cloned into.
-```sh
-git clone https://github.com/cartridge/base-module.git cartridge-my-module
-```
-
-Setup your local git repo
+To use this module, you will need [cartridge-cli](https://github.com/cartridge/cartridge-cli) installed and have a cartridge project setup.
 
 ```sh
-# Go into the cloned repo
-cd cartridge-my-module
-# Reconstruct repo to remove base-module git history
-rm -rf .git
-git init
-git add .
-git commit -m "feat: Initial commit"
-# Add the remote origin URL to the new repo
-git remote add origin https://github.com/cartridge/cartridge-my-module.git
-# Check new origin URL is set
-git remote -v
-# Push to the new repo
-git push -u origin master
+npm install cartridge-local-server --save-dev
 ```
 
-Set `NODE_ENV`to `development` - this is so none of the postinstall scripts run when installing dependencies.
+This module adds the following to a project:
 
-```sh
-# Linux / OS X
-export NODE_ENV=development
+* __TASK DESCRIPTION__
+* __TASK DESCRIPTION__
+* __TASK DESCRIPTION__
 
-# Windows
-set NODE_ENV=development
+## Config
 
-# Windows Powershell
-$env:NODE_ENV="development"
-```
+Once installed, the config file `task.local-server.js` is created and stored in the `_config` directory in the root of your cartridge project.
 
-Install dependencies
-```sh
-npm install
-```
+* * *
 
-And do some coding!
+## Usage
 
+__USAGE DESCRIPTION__
 
-## Development on the base module
-Clone repository
-```sh
-git clone https://github.com/cartridge/base-module.git
-```
+* * *
 
-Set `NODE_ENV`to `development` - this is so none of the postinstall scripts run when installing dependencies.
-
-```sh
-# Linux / OS X
-export NODE_ENV=development
-
-# Windows Command Prompt
-set NODE_ENV=development
-# Windows Powershell
-$env:NODE_ENV="development"
-```
-
-Install dependencies
-```sh
-cd base-module
-npm install
-```
-
-And do some coding!
+## Development
 
 ### Commit message standards [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 Try and adhere as closely as possible to the [Angular commit messages guidelines](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines).
@@ -82,8 +35,25 @@ Try and adhere as closely as possible to the [Angular commit messages guidelines
 ```sh
 npm install -g commitizen
 ```
-Now, simply use `git cz` instead of `git commit` when committing. This also supports commit message signing.
+Now, simply use `git cz` instead of `git commit` when committing.
 
+### ESLint
+By default `task.js` and `.js` files within `_config` are linted using ESLint. These checks are run by travis and will fail the build if errors are found.
 
-[travis-url]: https://travis-ci.org/cartridge/base-module
-[travis-image]: https://travis-ci.org/cartridge/base-module.svg?branch=master
+To manually check for errors run
+```sh
+npm run lint
+```
+
+If you are getting an error that you don't understand then try looking at the [JSLint Error Explanations](http://jslinterrors.com/) site or the [ESLint rules page](http://eslint.org/docs/rules/). The linting rules are in place for a reason. If you have a specific use case where you need to violate one then disable the linter in place rather than removing the rule. In addition leave a comment explaining the reasoning for disabling the linter.
+```javascript
+/*eslint no-extend-native: "off"*/
+// We are polyfilling native functionality for older browsers
+if (!Element.prototype.addEventListener) {
+	Element.prototype.removeEventListener = function (sEventType, fListener) {
+		...
+	}
+}
+/*eslint no-extend-native: "error"*/
+```
+If you add further JavaScript files to this module then please add them to the linting command defined in `package.json`.

@@ -1,7 +1,7 @@
 {
-  "name": "cartridge-base-module",
+  "name": "cartridge-local-server",
   "version": "0.0.1",
-  "description": "Base module for the cartridge project",
+  "description": "local service expansion pack for the cartridge project",
   "keywords": [
     "gulp",
     "dependency",
@@ -9,16 +9,16 @@
     "cartridge-module",
     "cartridge-task"
   ],
-  "homepage": "https://github.com/cartridge/cartridge-base-module",
+  "homepage": "https://github.com/cartridge/cartridge-local-server",
   "bugs": {
-    "url": "https://github.com/cartridge/cartridge-base-module/issues"
+    "url": "https://github.com/cartridge/cartridge-local-server/issues"
   },
   "license": "MIT",
   "author": "Code Computerlove <npm@codecomputerlove.co.uk>",
   "main": "task.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cartridge/cartridge-base-module.git"
+    "url": "https://github.com/cartridge/cartridge-local-server.git"
   },
   "scripts": {
     "postinstall": "node scripts/postinstall.js",
