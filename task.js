@@ -25,11 +25,7 @@ module.exports = function(gulp, projectConfig, tasks) {
 	* ---------------------*/
 
 	gulp.task(TASK_NAME, function() {
-	  browserSync.init({
-	    server: {
-	      baseDir: taskConfig.baseDir
-	    }
-	  });
+	  browserSync.init(taskConfig);
 	});
 
 	/* ----------------------------

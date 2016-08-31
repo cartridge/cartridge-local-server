@@ -4,7 +4,9 @@
 
 function getTaskConfig(projectConfig) {
 	var taskConfig = {
-		baseDir: projectConfig.dirs.build
+		server: {
+			baseDir: taskConfig.baseDir
+		}
 	};
 
 	return taskConfig;
