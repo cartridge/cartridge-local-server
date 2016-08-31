@@ -4,9 +4,7 @@
 
 function getTaskConfig(projectConfig) {
 	var taskConfig = {
-		someProperty: projectConfig,
-		src:          './module-thing.ext',
-		watch:        []
+		baseDir: projectConfig.dirs.build
 	};
 
 	return taskConfig;

@@ -27,6 +27,7 @@
     "lint": "eslint task.js _config/*.js scripts/*.js"
   },
   "dependencies": {
+    "browser-sync": "^2.14.3",
     "cartridge-module-util": "~0.5.0",
     "yargs": "^4.3.2"
   },

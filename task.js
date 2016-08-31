@@ -7,7 +7,7 @@
 var path = require('path');
 
 // Module dependencies
-
+var browserSync = require('browser-sync');
 
 module.exports = function(gulp, projectConfig, tasks) {
 
@@ -24,32 +24,19 @@ module.exports = function(gulp, projectConfig, tasks) {
 	*	MODULE TASKS
 	* ---------------------*/
 
-	gulp.task(TASK_NAME, function () {
-		return gulp.src(taskConfig.src)
-			// Do task stuff here
-			.pipe()
-			.pipe(gulp.dest(projectConfig.paths.dest[TASK_NAME]));
-	});
-
-	/* --------------------
-	*	WATCH TASKS
-	* ---------------------*/
-
-	gulp.task('watch:' + TASK_NAME, function () {
-		gulp.watch(
-			taskConfig.watch,
-			[TASK_NAME]
-		);
+	gulp.task(TASK_NAME, function() {
+	  browserSync.init({
+	    server: {
+	      baseDir: taskConfig.baseDir
+	    }
+	  });
 	});
 
 	/* ----------------------------
 	*	CARTRIDGE TASK MANAGEMENT
 	* -----------------------------*/
 
-	// Add the clean path for the generated styles
-	projectConfig.cleanPaths.push(projectConfig.paths.dest[TASK_NAME]);
 	// Add the task to the default list
 	tasks.default.push(TASK_NAME);
 	// Add the task to the watch list
-	tasks.watch.push('watch:' + TASK_NAME);
 }
