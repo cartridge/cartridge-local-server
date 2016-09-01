@@ -19,7 +19,6 @@ Once installed, the config file `task.local-server.js` is created and stored in 
 
 The `taskConfig` object is passed straight to the browser-sync module during setup.
 
-
 The `baseDir` config key tells browser-sync what directory to use as the server root. Browser syncing functionality itself has been set to opt-in by default, changing `ghostMode` to `true` will turn this on.
 
 All available options can be found in the [browser sync documentation](https://www.browsersync.io/docs/options)
@@ -30,7 +29,7 @@ All available options can be found in the [browser sync documentation](https://w
 
 There is a single task including in this expansion pack:
 
-Running `gulp local-server` will setup a browser-sync instance and open a browser when setup is completed.
+Running `gulp local-server` will setup a browser-sync instance and open a browser when setup is completed. Unlike other cartridge expansion packs, this task is not included as part of the `default` or `build` task - with the server requiring to be run seperately to these tasks.
 
 * * *
 
