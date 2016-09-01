@@ -2,6 +2,8 @@
 
 'use strict';
 
+var path = require('path');
+
 function getTaskConfig(projectConfig) {
 	//Browser Sync options object
 	//https://www.browsersync.io/docs/options
@@ -9,7 +11,7 @@ function getTaskConfig(projectConfig) {
 	var taskConfig = {
 		//Server config options
 		server: {
-			baseDir: projectConfig.dirs.build,
+			baseDir: path.join(__dirname + '/..', projectConfig.paths.dest.static_html),
 			// directory: true, // directory listing
 			// index: "index.htm", // specific index filename
 		},
