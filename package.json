@@ -1,7 +1,7 @@
 {
   "name": "cartridge-local-server",
   "version": "0.0.1",
-  "description": "local service expansion pack for the cartridge project",
+  "description": "local server (browser-sync) expansion pack for the cartridge project",
   "keywords": [
     "gulp",
     "dependency",
