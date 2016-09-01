@@ -27,12 +27,4 @@ module.exports = function(gulp, projectConfig, tasks) {
 	gulp.task(TASK_NAME, function() {
 	  browserSync.init(taskConfig);
 	});
-
-	/* ----------------------------
-	*	CARTRIDGE TASK MANAGEMENT
-	* -----------------------------*/
-
-	// Add the task to the default list
-	tasks.default.push(TASK_NAME);
-	// Add the task to the watch list
 }
