@@ -9,7 +9,7 @@ var path = require('path');
 // Module dependencies
 var browserSync = require('browser-sync');
 
-module.exports = function(gulp, projectConfig, tasks) {
+module.exports = function(gulp, projectConfig) {
 
 	/* --------------------
 	*	CONFIGURATION
