@@ -5,11 +5,13 @@
 var path = require('path');
 
 function getTaskConfig(projectConfig) {
-	//Browser Sync options object
-	//https://www.browsersync.io/docs/options
+	// Browser Sync options object
+	// https://www.browsersync.io/docs/options
 
 	var taskConfig = {
-		//Server config options
+		// Files to watch
+		files: path.join(__dirname + '/..', projectConfig.dirs.dest),
+		// Server config options
 		server: {
 			baseDir: path.join(__dirname + '/..', projectConfig.paths.dest.static_html),
 			// directory: true, // directory listing
