@@ -1,18 +1,24 @@
 sudo: false
 language: node_js
-node_js:
-    - '5.1'
-    - '4.4'
-    - '0.12.2'
 env:
     - NODE_ENV=development
-install:
-    - npm install
-    # - npm install -g mocha
-script:
-    # - mocha
 cache:
   directories:
     - node_modules
+notifications:
+  email: false
 git:
   depth: 1
+node_js:
+  - '7'
+  - '6'
+  - '4'
+install:
+  - npm install
+before_script:
+  - npm prune
+after_success:
+  - npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

@@ -24,7 +24,8 @@
     "postinstall": "node scripts/postinstall.js",
     "preuninstall": "node scripts/preuninstall.js",
     "test": "npm run lint # && mocha",
-    "lint": "eslint task.js _config/*.js scripts/*.js"
+    "lint": "eslint task.js _config/*.js scripts/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "dependencies": {
     "browser-sync": "^2.14.3",
@@ -37,7 +38,11 @@
     "cz-conventional-changelog": "^1.1.5",
     "eslint": "^2.7.0",
     "fs-extra": "^0.26.7",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "semantic-release": "^6.3.2"
+  },
+  "release": {
+    "branch": "master"
   },
   "config": {
     "commitizen": {
