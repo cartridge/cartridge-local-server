@@ -7,8 +7,6 @@ cache:
     - node_modules
 notifications:
   email: false
-git:
-  depth: 1
 node_js:
   - '7'
   - '6'
