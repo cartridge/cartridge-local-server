@@ -22,6 +22,12 @@ function getTaskConfig(projectConfig) {
 		// notify: false // Turn off UI notifications
 		// browser: 'google chrome' //Set what browser to open on start - https://www.browsersync.io/docs/options#option-browser
 		// open: false // Stop browser automatically opening
+		// Use a specific port (instead of the one auto-detected by Browsersync)
+		// port: 8080,
+		// Change the UI default port
+		// ui: {
+		// 	port: 8081
+		// }
 	};
 
 	return taskConfig;
